@@ -118,7 +118,13 @@ if($uri->isempty()) {
 	if($uri->controller != null) {
 		$uri->controller = str_replace("-", "_", $uri->controller);
 		load::controller($uri->controller);
-		$controller = new $uri->controller;
+		if(class_exists($uri->controller))
+			$controller = new $uri->controller;
+		else {
+			load::controller("cmsbasic");
+			$controller = new cmsBasic();
+		}
+		
 	}
 	if($uri->method) {
 		$uri->method = str_replace("-", "_", $uri->method);

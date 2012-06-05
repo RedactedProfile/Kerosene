@@ -10,7 +10,7 @@
 	
 	~K
 */
-class main extends BaseController {
+class cmsBasic extends BaseController {
 
 	public function __construct() {
 		parent::__construct();
@@ -18,7 +18,7 @@ class main extends BaseController {
 	
 	public function index() {
 		
-		$this->data['cms'] = CMS::GetDomainHomepage($this->data['domain']);
+		$this->data['cms'] = new CMS($this->uri->controller);
 		load::view("header", $this->data);
 		load::view("cms.basic", $this->data);
 		load::view("footer");

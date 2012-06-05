@@ -1,0 +1,444 @@
+/* ----------------------------------------------------------------------------------------------------
+   01 Normalize styles "Its a reset" :)
+---------------------------------------------------------------------------------------------------- */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+body {
+    line-height:1;
+}
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+html,body { height: 100%; }
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+nav ul {
+    list-style:none;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+   02 TYPOGRAPHY or is it (-_-)
+---------------------------------------------------------------------------------------------------- */
+body {
+	color: #000;
+	font: 13px/20px Arial, Helvetica, sans-serif;
+}
+/* LINKS
+-------------------------------------------------- */
+a {
+	color: #1f7bb6;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* ORDERED/ UNORDERED LISTS
+-------------------------------------------------- */
+ul, ol {
+	margin: 1em 0 18px 24px;
+	padding: 0;
+	line-height: 18px;
+}
+li {
+	margin: 0 0 7px 0;
+	padding: 0;
+}
+
+/* HEADINGS
+-------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+	line-height: 50px;
+	margin: 20px 0 5px 0;
+}
+h1 {
+	font-size: 26px;
+}
+h2 {
+	font-size: 23px;
+}
+h3 {
+	font-size: 21px;
+}
+h4 {
+	font-size: 18px;
+}
+h5 {
+	font-size: 16px;
+}
+h6 {
+	font-size: 13px;
+}
+
+/* BASIC FONT ELEMENTS
+-------------------------------------------------- */
+p {
+	margin: 0 0 16px 0;
+	padding: 0;
+}
+small {
+	font-size: 11px;
+}
+blockquote {
+	padding: 8px 30px 15px 30px;
+	font: italic 14px/17px;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+   03 FORMS STYLES
+---------------------------------------------------------------------------------------------------- */
+/* -- form input -- */
+input, textarea, 
+select, 
+input[type=search], 
+button {
+	font-size: 13px;
+}
+input[type=text], 
+input[type=password], 
+textarea, 
+input[type=search] {
+	padding: 6px 10px;
+	border: solid 1px #ddd;
+	background: #f3f3f3;
+	border-radius: 5px;
+}
+input[type=text], 
+input[type=search] {
+	width: 240px;
+	max-width: 90%;
+}
+
+/* -- text area -- */
+textarea {
+	width: 94%;
+	line-height: 150%;
+}
+
+/* -- form input:focus -- */
+textarea:focus, 
+input[type=password]:focus, 
+input[type=text]:focus, 
+input[type=search]:focus {
+	background: #f9f9f9;
+	outline: none;
+}
+
+/* -- form button -- */
+input[type=reset], 
+input[type=submit], 
+button {
+	padding: 7px 20px;
+	border: none;
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+/* -- form button:hover -- */
+input[type=reset]:hover, 
+input[type=submit]:hover, button:hover {
+	background: #000;
+	color: #fff;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+   04 STRUCTURE STYLES
+---------------------------------------------------------------------------------------------------- */
+#page-wrapper { 
+	min-height: 100%;
+	z-index:10; 
+}
+/* -- set the width of the site -- */
+.page-width {
+	width: 960px;
+	margin: 0 auto 0 auto;
+}
+
+/*--  post wrapper -- */
+.post-wrapper{}
+
+/* -- header wrapper -- */
+#header-wrapper{}
+
+/* -- body -- */
+#body { overflow:auto; padding-bottom: 150px; }
+
+/*--  content -- */
+#content {
+	width: 686px;
+	padding:30px 0 40px 0;
+	float: left;
+}
+
+/* -- sidebar -- */
+#sidebar {
+	width: 252px;
+}
+
+/* -- sidebar right-- */
+.sidebar-right #content {
+	float: left;
+}
+.sidebar-right #sidebar {
+	float: right;
+	padding:30px 0px 40px 40px;
+}
+
+/* -- sidebar left -- */
+.sidebar-left #content {
+	float: right;
+}
+.sidebar-left #sidebar {
+	float: left;
+	padding:30px 40px 40px 0px;
+}
+
+/* -- sidebar none -- */
+.sidebar-none #content {
+	width: 100%;
+	float: none;
+}
+
+/* -- footer wrapper -- */
+#footer-wrapper{ position: relative; margin-top: -150px; /* negative value of footer height */ height: 150px; clear:both; }
+
+/* ----------------------------------------------------------------------------------------------------
+   05 HEADER STYLES
+---------------------------------------------------------------------------------------------------- */
+#header-main {
+	height: 200px;
+	margin-bottom: 16px;
+	border-bottom: solid 1px #ccc;
+	position: relative;
+	z-index:20;
+}
+
+/* LOGO TEXT
+-------------------------------------------------- */
+/* -- site logo -- */
+#site-logo {
+	margin: 0;
+	position: absolute;
+	top: 20px;
+	font-size: 36px;	
+}
+#site-logo a {
+	text-decoration: none;
+}
+#site-logo a:hover {
+	text-decoration: none;
+}
+
+/* SOCIAL MEDIA
+-------------------------------------------------- */
+.social-media {
+	float: right;
+	position: absolute;
+	right: 0;
+	bottom: 8px;
+}
+.social-media ul {
+	margin: 6px 0 0 0;
+	padding: 0;
+}
+.social-media ul li {
+	margin: 0;
+	padding: 0 2px 5px 2px;
+	float:left;
+}
+
+/* MAIN NAVIGATION
+-------------------------------------------------- */
+#navigation-main {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	z-index:30;
+}
+#navigation-main li {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	float: left;
+	position: relative;
+	list-style: none;
+}
+
+/* -- main link -- */
+#navigation-main a {
+	padding: 5px 15px 5px 15px;
+	margin: 0 5px 0 0;
+	display: block;
+	color: #666;
+	text-decoration: none;
+}
+
+/* -- main link :hover -- */
+#navigation-main a:hover, 
+#navigation-main li:hover > a {
+}
+
+/* sub-levels link */
+#navigation-main ul a{
+	text-transform: none;
+	color: #FFF;
+	font-weight: normal;
+	padding: 7px 0 7px 15px;
+	margin: 0;
+	width: 180px;
+	background: none;
+	border: none;
+	text-shadow: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+	transition: none;
+}
+/* sub-levels link :hover */
+#navigation-main ul a:hover{
+	background:#666666;
+	color: #fff;
+}
+/* dropdown ul */
+#navigation-main ul {
+	text-align: left;
+	margin: 0;
+	padding: 5px 0;
+	list-style: none;
+	position: absolute;
+	background:#000000;
+	display: none;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+}
+#navigation-main ul li {
+	background: none;
+	padding: 0;
+	margin: 0;
+}
+/* sub-levels dropdown */
+#navigation-main ul ul {
+	left: 190px;
+	top: -2px;
+}
+/* show dropdown ul */
+#navigation-main li:hover > ul {
+	display: block;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------
+   04 SLIDES STYLES
+---------------------------------------------------------------------------------------------------- */
+#slides-wrapper {
+	padding-bottom: 40px;
+}
+#slides {}
+
+/* ----------------------------------------------------------------------------------------------------
+   05 PAGE STYLES
+---------------------------------------------------------------------------------------------------- */
+/* -- page title -- */
+.page-title {
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	font-size: 28px;
+	line-height: 40px;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------
+   06 FOOTER STYLES
+---------------------------------------------------------------------------------------------------- */
+#footer-main {
+	padding: 30px 0 30px 0;
+	border-top: solid 1px #ccc;
+	clear: both;
+}
+/* -- navigation footer -- */
+#navigation-footer {
+	width:100%;
+	margin: 5px 0 10px;
+	padding: 0;
+	text-align: center;
+}
+#navigation-footer li {
+	margin: 0 8px;
+	padding: 0;
+	display:inline;
+}
+#navigation-footer a {
+	text-decoration: none;
+}
+/* -- footer text -- */
+.footer-text {
+	margin-top:20px;
+	font-size: 12px;
+	text-align: center;
+	clear: both;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+   07 GLOBAL STYLES
+---------------------------------------------------------------------------------------------------- */
+.clear {
+	clear: both;
+}
+.floatLeft {
+	float: left;
+}
+.floatRight {
+	float: right;
+}
+.textleft {
+	text-align: left;
+}
+.textright {
+	text-align: right;
+}
+.textcenter {
+	text-align: center;
+}
+/* clearfix */
+.clearfix:after
+{ visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.clearfix
+{ display: inline-block; }
+/* clearfix for ie7 */
+.clearfix
+{ display: block; zoom: 1; }
