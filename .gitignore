@@ -1,0 +1,27 @@
+# Editor tmp files
+.tmp_*~
+.*.sw*
+.project
+_notes/
+.settings/
+.buildpath
+
+# Log/tmp files
+php.log
+tmp/
+/backups/
+
+# Just plain useless files
+Thumbs.db
+thumbs.db
+.DS_Store
+
+# netbeans project folder
+nbproject/
+
+# any files via CKEditor/FCKEditor
+userfiles/
+images/gallery/
+
+CVS/
+.svn/

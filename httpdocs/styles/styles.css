@@ -1,0 +1,1009 @@
+/* ----------------------------------------------------------------------------------------------------
+   01 Normalize styles "Its a reset" :)
+---------------------------------------------------------------------------------------------------- */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+body {
+    line-height:1;
+}
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+html,body { height: 100%; }
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+nav ul {
+    list-style:none;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+   02 TYPOGRAPHY or is it (-_-)
+---------------------------------------------------------------------------------------------------- */
+body {
+	color: #666;
+	font: 13px/20px Arial, Helvetica, sans-serif;
+	background: url(../images/interface/bg.jpg) repeat-x 0px 158px #4f7fa3;
+}
+/* LINKS
+-------------------------------------------------- */
+a {
+	color: #1f7bb6;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/* ORDERED/ UNORDERED LISTS
+-------------------------------------------------- */
+ul, ol {
+	margin: 1em 0 18px 24px;
+	padding: 0;
+	line-height: 18px;
+}
+li {
+	margin: 0 0 7px 0;
+	padding: 0;
+}
+
+/* HEADINGS
+-------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+	margin: 0px 0 0px 0;
+	font-weight: normal;
+	text-shadow: 0px 1px 0px #125483;
+	color: #fff;
+}
+h1 {
+	font-size: 28px;
+	line-height: 32px;
+}
+h2 {
+	font-size: 20px;
+	color: #125483;
+	text-shadow: 0px 1px 0px #fff;
+	font-weight: bold;
+}
+h3 {
+	font-size: 21px;
+}
+h4 {
+	font-size: 18px;
+}
+h5 {
+	font-size: 16px;
+}
+h6 {
+	font-size: 13px;
+}
+
+/* BASIC FONT ELEMENTS
+-------------------------------------------------- */
+p {
+	margin: 0 0 16px 0;
+	padding: 0;
+}
+small {
+	font-size: 11px;
+}
+blockquote {
+	padding: 8px 30px 15px 30px;
+	font: italic 14px/17px;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+   03 FORMS STYLES
+---------------------------------------------------------------------------------------------------- */
+/* -- form input -- */
+input, textarea, 
+select, 
+input[type=search], 
+button {
+	font-size: 13px;
+}
+input[type=text], 
+input[type=password], 
+textarea, 
+input[type=search] {
+	padding: 6px 10px;
+	border: solid 1px #ddd;
+	background: #f3f3f3;
+	border-radius: 5px;
+}
+input[type=text], 
+input[type=search] {
+	width: 240px;
+	max-width: 90%;
+}
+
+/* -- text area -- */
+textarea {
+	width: 94%;
+	line-height: 150%;
+}
+
+/* -- form input:focus -- */
+textarea:focus, 
+input[type=password]:focus, 
+input[type=text]:focus, 
+input[type=search]:focus {
+	background: #f9f9f9;
+	outline: none;
+}
+
+/* -- form button -- */
+input[type=reset], 
+input[type=submit], 
+button {
+	padding: 7px 20px;
+	border: none;
+	background: #333;
+	color: #fff;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+/* -- form button:hover -- */
+input[type=reset]:hover, 
+input[type=submit]:hover, button:hover {
+	background: #000;
+	color: #fff;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+   04 STRUCTURE STYLES
+---------------------------------------------------------------------------------------------------- */
+#page-wrapper { margin-top: -13px; min-height: 100%; }
+/* -- set the width of the site -- */
+.page-width {
+	width: 980px;
+	margin: 0 auto 0 auto;
+}
+
+/*--  post wrapper -- */
+.post-wrapper{
+	float: left;
+	margin-top: 30px;
+}
+.post-wrapper article {
+	float: left;
+	background: rgba(255,255,255,0.5);
+	width: 632px;
+	padding: 12px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px; 
+}
+/* -- header wrapper -- */
+#header-bg {
+	background: url(../images/interface/bg-header.png) repeat-x 0 0;
+	padding: 0;
+	margin: 0;
+	height: 317px;
+	position: relative;
+	z-index: 999;
+}
+#header-wrapper{
+	background: url(../images/interface/bg-header-main.png) no-repeat top center;
+	height: 317px;
+}
+#navigation-bg {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 79px;
+	background: url(../images/interface/bg-nav.png) repeat-x bottom left;
+}
+/* -- slideshow -- */
+#slideshow-wrapper {
+	margin: 0 auto;
+	width: 978px;
+	height: 483px;
+}
+#slideshow {
+	width: 978px;
+	height: 483px;
+	border: 1px solid #f1f3f6;
+	position: relative;
+	z-index: 1;
+	margin-top: -21px;
+}
+/* -- body -- */
+#body { overflow:auto; padding-bottom: 150px; padding-top: 30px; background: url(../images/interface/watermark.png) no-repeat center 40px; }
+
+/*--  content -- */
+#content {
+	width: 656px;
+	padding:25px 30px 40px 0;
+	float: left;
+	border-right: 1px solid #c6d3df;
+}
+#featured {
+	float: left;
+	width: 686px;
+	margin: 30px 0px;
+}
+div.feature-item {
+	float: left;
+	width: 226px;
+}
+div.feature-item h2 {
+	padding: 0px 0px 15px 0px;
+}
+div.feature-item ul {
+	padding: 0;
+	margin: 10px 0px;
+	list-style: none;
+}
+div.feature-item ul li {
+	color: #fff;
+	font-size: 14px;
+	background: url(../images/interface/bullet.png) no-repeat left center;
+	padding-left: 14px;
+}
+a.view-btn {
+	background: url(../images/interface/btn-view.png) no-repeat top left;
+	width: 69px;
+	height: 39px;
+	text-indent: -9999px;
+	float:left;
+}
+a.view-btn:hover {
+	background-position: bottom left;
+}
+div.feature-item img {
+	border: 1px solid #e6e6e6;
+	padding: 4px;
+	background: #fff;
+    -webkit-box-shadow:  2px 2px 4px 0px rgba(0, 0, 0, 0.6);
+    box-shadow:  2px 2px 4px 0px rgba(0, 0, 0, 0.6);
+}
+/* -- sidebar -- */
+#sidebar {
+	width: 250px;
+	float: right;
+	margin-top: 30px;
+	padding:0px 20px 40px 20px;
+}
+#sidebar h3 {
+	font-size: 26px;
+	color: #125483;
+	text-shadow: 0px 1px 0px #fff;
+	font-weight: bold;
+}
+#news-block {
+	float: left;
+	width: 250px;
+	margin: 30px 0px;
+}
+#news-block ul {
+	list-style: none;
+	padding: 0;
+	float: left;
+	width: 242px;
+	margin: 0;
+}
+#news-block ul li {
+	padding: 14px 0px;
+	border-bottom: 1px solid #c6d3df;
+	position: relative;
+	width: 270px;
+	height: 78px;
+	margin-bottom: 14px;
+}
+#news-block ul li a img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 90px;
+	height: 78px;
+	border: 1px solid #e6e6e6;
+	padding: 3px;
+	background: #fff;
+    -webkit-box-shadow:  2px 2px 4px 0px rgba(0, 0, 0, 0.6);
+    box-shadow:  2px 2px 4px 0px rgba(0, 0, 0, 0.6);
+}
+#news-block ul li div {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 159px;
+	float: right;
+	display: block;
+}
+#news-block ul li div h4 {
+	font-style: italic;
+	float: left;
+	width: 100%;
+}
+#news-block ul li div span {
+	color: #042d4b;
+	font-size: 14px;
+	padding-top: 10px;
+	float: left;
+	width: 100%;
+}
+/* -- sidebar right-- */
+.sidebar-left #content {
+	float: right;
+}
+/* -- sidebar left -- */
+.sidebar-right #sidebar {
+	float: left;
+}
+
+/* -- sidebar none -- */
+.sidebar-none #content {
+	width: 100%;
+	float: none;
+}
+
+/* -- footer wrapper -- */
+#footer-wrapper{ position: relative; margin-top: -150px; /* negative value of footer height */ height: 150px; background: url(../images/interface/bg-footer.png) repeat-x 0 80px; clear:both; }
+
+/* ----------------------------------------------------------------------------------------------------
+   05 HEADER STYLES
+---------------------------------------------------------------------------------------------------- */
+#header-main {
+	height: 79px;
+	position: relative;
+}
+
+/* LOGO TEXT
+-------------------------------------------------- */
+/* -- site logo -- */
+#site-logo {
+	margin: 0;
+	position: absolute;
+	top: 20px;
+	font-size: 36px;	
+}
+#site-logo a {
+	text-decoration: none;
+}
+#site-logo a:hover {
+	text-decoration: none;
+}
+
+/* -- site description -- */
+#site-description {
+	margin: 0;
+	position: absolute;
+	top: 75px;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 100%;	
+}
+/* LOGO IMAGE
+-------------------------------------------------- */
+#site-logo-image {
+	margin: 0;
+	position: absolute;
+	top: 40px;
+}
+/* SOCIAL MEDIA
+-------------------------------------------------- */
+.social-media {
+	float: right;
+	position: absolute;
+	right: 0;
+	bottom: 8px;
+}
+.social-media ul {
+	margin: 6px 0 0 0;
+	padding: 0;
+}
+.social-media ul li {
+	margin: 0;
+	padding: 0 2px 5px 2px;
+	float:left;
+}
+
+/* SEARCH FORM
+-------------------------------------------------- */
+#header-main #search-form {
+	width: 160px;
+	position: absolute;
+	right: 0;
+	top: 40px;
+}
+#header-main #search-form #s {
+	width: 100px;
+	padding-left: 28px;
+	border: solid 1px #ddd;
+	background: #eee url(../images/icons/search.png) no-repeat 8px center;
+	color: #a5a099;
+	float: right;
+	border-radius: 3px;
+	-webkit-transition: width .7s;
+	-moz-transition: width .7s;
+	transition: width .7s;
+}
+#header-main #search-form #s:focus {
+	width: 140px;
+	color: #333;
+}
+
+/* MAIN NAVIGATION
+-------------------------------------------------- */
+#navigation-main {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	position: absolute;
+	bottom: 17px;
+	left: 0;
+}
+#navigation-main li {
+	margin: 0 3px 0 0;
+	padding: 0 0 0 0;
+	float: left;
+	position: relative;
+	list-style: none;
+}
+
+/* -- main link -- */
+#navigation-main a {
+	margin: 0 0 0 0;
+	padding: 0px 12px 0px 12px;
+	height: 56px;
+	line-height: 61px;
+	display: block;
+	color: #fff;
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #1c4c66;
+}
+
+/* -- main link :hover -- */
+#navigation-main a:hover, 
+#navigation-main li:hover > a {
+	background: rgba(0,0,0,0.1);
+}
+
+/* -- current link --*/
+#navigation-main .current_page_item a, 
+#navigation-main .current-menu-item a,
+#navigation-main .current-post-ancestor a, 
+#navigation-main .current-menu-parent a, 
+#navigation-main .current-post-parent a 
+{
+	color: #154d72;
+	background: url(../images/interface/nav-active.png) repeat-x 0 0;
+	text-shadow: 0px 1px 0px #fff;
+	height: 61px;
+	line-height: 61px;
+}
+
+/* -- current link :hover -- */
+#navigation-main .current_page_item a:hover, 
+#navigation-main .current-menu-item a:hover {
+	color: #154d72;
+	background: url(../images/interface/nav-active.png) repeat-x 0 0;
+	text-shadow: 0px 1px 0px #fff;
+	height: 61px;
+	line-height: 61px;
+}
+/* sub-levels link */
+#navigation-main ul a, #navigation-main .current_page_item ul a, #navigation-main ul .current_page_item a, #navigation-main .current-menu-item ul a, #navigation-main ul .current-menu-item a, #navigation-main li:hover > ul a  {
+	text-transform: none;
+	color: #FFF;
+	font-weight: normal;
+	padding: 7px 0 7px 15px;
+	margin: 0;
+	width: 180px;
+	background: none;
+	border: none;
+	text-shadow: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+	transition: none;
+}
+/* sub-levels link :hover */
+#navigation-main ul a:hover, #navigation-main .current_page_item ul a:hover, #navigation-main ul .current_page_item a:hover, #navigation-main .current-menu-item ul a:hover, #navigation-main ul .current-menu-item a:hover, #navigation-main li:hover > ul a:hover {
+	background:#666666;
+	color: #fff;
+}
+/* dropdown ul */
+#navigation-main ul {
+	text-align: left;
+	margin: 0;
+	padding: 5px 0;
+	list-style: none;
+	position: absolute;
+	background:#000000;
+	z-index: 100;
+	display: none;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-topright: 0px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+}
+#navigation-main ul li {
+	background: none;
+	padding: 0;
+	margin: 0;
+}
+/* sub-levels dropdown */
+#navigation-main ul ul {
+	left: 190px;
+	top: -2px;
+}
+/* show dropdown ul */
+#navigation-main li:hover > ul {
+	display: block;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------
+   06 SLIDES STYLES
+---------------------------------------------------------------------------------------------------- */
+#slides-wrapper {
+	padding-bottom: 40px;
+}
+#slides {}
+
+/* ----------------------------------------------------------------------------------------------------
+   07 PAGE STYLES
+---------------------------------------------------------------------------------------------------- */
+/* -- page title -- */
+.page-title {
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	font-size: 28px;
+	line-height: 40px;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+   08 POST STYLES
+---------------------------------------------------------------------------------------------------- */
+/* -- post -- */
+.post {
+	margin-bottom: 12px;
+}
+
+/* -- post title --  */
+.post-title {
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+	font-size: 26px;
+}
+.post-title a {
+}
+
+/* -- post image -- */
+.post-image {
+	margin: 0 0 5px 0;
+}
+.post-image.left {
+	margin-right: 15px;
+	float: left;
+}
+.post-image.right {
+	margin-left: 15px;
+	float: right;
+}
+.post-image img {
+	border: 6px solid rgba(255,255,255,0.4);
+}
+/* -- post meta -- */
+.post-meta {
+	margin: 0 0 7px 0;
+}
+.post-meta a {
+	color: #999;
+}
+.post-meta .post-author {
+	margin-right: 9px;
+	padding: 2px 0 2px 20px;
+	background: url(../images/icons/post-author.png) no-repeat 0 4px;
+}
+.post-meta .post-category {
+	margin-right: 9px;
+	padding: 2px 0 2px 20px;
+	background: url(../images/icons/post-category.png) no-repeat 0 4px;
+}
+.post-meta .post-tag {
+	margin-right: 9px;
+	padding: 2px 0 2px 20px;
+	background: url(../images/icons/post-tag.png) no-repeat 0 4px;
+}
+.post-meta .post-comment {
+	padding: 2px 0 2px 20px;
+	background: url(../images/icons/post-comment.png) no-repeat 0 4px;
+}
+
+/* -- list small thumbnails on posts -- */
+.small-thumbnails .post-image {
+	margin: 0px 16px 10px 0;
+	float: left;
+}
+.small-thumbnails .post-content {
+	overflow: hidden;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+   09 SOCIAL MEDIA SINGLE
+---------------------------------------------------------------------------------------------------- */
+.social-media-single {
+   	width:100%;
+   	height:30px;
+    margin: 20px 0px;
+    padding:10px 0 0 0;
+    background:#666666; /*For IE 8 and 7*/
+    background: rgba(0, 0, 0, 0.2);
+    float: left;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.social-media-single .facebook {
+	float: left; 
+	margin-left: 6px;
+}
+.social-media-single .twitter {
+	float: left; 
+	margin-left: -35px; 
+}
+.social-media-single .google-plus {
+	float: left; 
+	width: 210px; 
+	overflow: hidden;
+	margin-left: -12px; 
+	color: #fff;
+}
+.social-media-single .pinterest {
+	float: left; 
+	width: 50px; 
+	overflow: hidden;
+	margin-left: -20px; 
+	color: #fff;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+   10 COMMENT STYLES
+---------------------------------------------------------------------------------------------------- */
+.commentwrap {
+	margin: 10px 0 20px;
+	position: relative;
+	clear: both;
+}
+
+/* -- comment title -- */
+.comment-title, #reply-title {
+	padding: 0;
+	margin: 0 0 10px;
+	font-size: 140%;
+}
+
+/* -- comment pagenav -- */
+.commentwrap .pagenav {
+	margin: 10px 0;
+	border: none;
+}
+.commentwrap .pagenav.top {
+	margin: 0;
+	position: absolute;
+	top: 10px;
+	right: 0;
+}
+
+/* -- commentlist -- */
+.commentlist {
+	margin: 0 0 30px;
+	padding: 5px 0 0;
+	border-top: solid 1px #ddd;
+}
+.commentlist li {
+	margin: 0;
+	padding: 15px 0 0;
+	position: relative;	
+	list-style: none;
+}
+.commentlist .comment-author {
+	margin: 2px 0 5px;
+	padding: 0;
+}
+.commentlist .avatar {
+	margin: 0 15px 0 0;
+	float: left;
+}
+.commentlist cite {
+	font-style: normal;
+	font-size: 130%;
+}
+.commentlist cite a {
+	text-decoration: none;
+}
+.commentlist .bypostauthor cite {
+	padding-left: 18px;
+	background: url(images/icon-author-comment.png) no-repeat 0 2px;	
+}
+.commentlist .comment-time {
+	font-size: 75%;
+	text-transform: uppercase;
+}
+.commentlist .commententry {
+	min-height: 40px;
+	padding-bottom: 5px;
+	border-bottom: solid 1px #ddd;
+	overflow: hidden;
+	position: relative;	
+	word-wrap: break-word;
+}
+.commentlist ul, .commentlist ol {
+	margin: 0 0 0 7%;
+	padding: 0;
+}
+
+/* -- reply link -- */
+.commentlist .reply {
+	position: absolute;
+	right: 0;
+	top: 8px;
+}
+.commentlist .comment-reply-link {
+	font-size: 11px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.commentlist .comment-reply-link:hover {
+	text-decoration: none;
+}
+
+/* COMMENT FORM
+-------------------------------------------------- */
+#respond {
+	margin: 0;
+	padding: 10px 0 0;
+	position: relative;
+	clear: both;
+}
+#respond #cancel-comment-reply-link {
+	position: absolute;
+	top: 20px;
+	right: 0;
+	font-size: 85%;
+	line-height: 100%;
+	text-decoration: none;
+	padding: 5px 10px;
+	display: block;
+	color: #fff;
+	background: #F30;
+}
+#respond #cancel-comment-reply-link:hover {
+	background: #333;
+}
+#commentform {
+	margin: 15px 0 0;
+}
+#commentform input[type=text] {
+	width: 206px;
+	margin-right: 5px;
+}
+#commentform label {
+	font-weight: bold;
+}
+#commentform label small {
+	font-weight: normal;
+}
+#commentform textarea {
+	height: 140px;
+}
+#commentform input#submit {
+	padding: 7px 20px;
+}
+/* ----------------------------------------------------------------------------------------------------
+   11 POST NAVIGATION STYLES
+---------------------------------------------------------------------------------------------------- */
+.post-nav {
+	margin: 0 0 30px;
+	padding: 15px 0;
+	clear: both;
+	font-size:14px;
+}
+.post-nav a {
+	text-decoration: none;
+	display: block;
+}
+.post-nav a:hover {
+	text-decoration: none;
+}
+.post-nav .prev {
+	float: left;
+}
+.post-nav .next {
+	float: right;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+   12 FOOTER STYLES
+---------------------------------------------------------------------------------------------------- */
+#footer-main {
+	padding: 30px 0 30px 0;
+	clear: both;
+	position: relative;
+	height: 150px;
+}
+/* -- navigation footer -- */
+#navigation-footer {
+	width:100%;
+	margin: 15px 0 10px;
+	padding: 0;
+	text-align: center;
+}
+#navigation-footer li {
+	margin: 0 8px;
+	padding: 0;
+	display:inline;
+}
+#navigation-footer a {
+	text-decoration: none;
+	color: #fff;
+}
+#navigation-footer a:hover {
+	text-decoration: underline;
+}
+/* -- footer text -- */
+.footer-text {
+	position: absolute;
+	top: 108px;
+	left: 0px;
+	width: 400px;
+	font-size: 12px;
+	clear: both;
+	line-height: 42px;
+}
+.footer-text a {
+	color: #d4d5d7;
+}
+.social {
+	position: absolute;
+	top: 110px;
+	right: 0px;
+	width: 299px;
+	height: 48px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.social li {
+	float: left;
+	margin-right: 18px;
+}
+.social li a {
+	float: left;
+	display: block;
+	text-indent: -9999px;
+}
+.social li.facebook a {
+	background: url(../images/interface/social.png) no-repeat 0px 0px;
+	width: 88px;
+	height: 48px;
+}
+.social li.twitter a {
+	background: url(../images/interface/social.png) no-repeat -111px 0px;
+	width: 66px;
+	height: 48px;
+}
+.social li.youtube a {
+	background: url(../images/interface/social.png) no-repeat -196px 0px;
+	width: 83px;
+	height: 48px;
+}
+/* ----------------------------------------------------------------------------------------------------
+   13 WIDGET STYLES
+---------------------------------------------------------------------------------------------------- */
+.widget {
+	width: 96%;
+	float: right;
+	margin: 0px 0px 12px 0px;
+	padding: 2%;
+	background: rgba(255,255,255,0.2);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px; 
+}
+.widget h3 {
+	padding-top: 0px;
+	margin-top: 0px;
+}
+.widget-container {
+	margin: 0 auto;
+	width: 90%;
+}
+/* ----------------------------------------------------------------------------------------------------
+   14 BASIC WORDPRESS STYLES 
+---------------------------------------------------------------------------------------------------- */
+img.alignleft, 
+img.aligncenter, 
+img.alignright, 
+img.alignnone {
+	margin-bottom: 15px;
+}
+.alignleft {
+	margin-right: 30px;
+	float: left;
+}
+.alignright {
+	margin-left: 30px;
+	float: right;
+}
+.aligncenter {
+	margin:0 auto 0 auto;
+	text-align: center;
+	display: block;
+}
+.wp-caption {
+	max-width: 100%;
+	margin-bottom: 15px;
+	text-align: center;	
+}
+.wp-caption-text {
+	margin: 6px 0;
+	font-size: 12px;
+	font-style: italic;
+	line-height: 16px;
+}
+
+/* ----------------------------------------------------------------------------------------------------
+   15 GLOBAL STYLES
+---------------------------------------------------------------------------------------------------- */
+.clear {
+	clear: both;
+}
+.floatLeft {
+	float: left;
+}
+.floatRight {
+	float: right;
+}
+.textleft {
+	text-align: left;
+}
+.textright {
+	text-align: right;
+}
+.textcenter {
+	text-align: center;
+}
+/* clearfix */
+.clearfix:after
+{ visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.clearfix
+{ display: inline-block; }
+/* clearfix for ie7 */
+.clearfix
+{ display: block; zoom: 1; }
