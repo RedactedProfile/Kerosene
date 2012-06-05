@@ -281,7 +281,7 @@ class CMS extends BaseModel {
 		}
 		
 		if($sort) {
-			$db->orderby($sort, (($sortdir == 1)?"asc":"desc"));
+			$db->orderby($sort, $sortdir);
 		} else {
 			$db->orderby("id", "asc");
 		}

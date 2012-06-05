@@ -124,7 +124,6 @@ class admin extends BaseAdmin {
 	}
 	
 	public function pages() {
-		
 		if(!isset($this->uri->arguments[0])) {
 			redirect("/admin/pages/list");
 			die();
@@ -143,7 +142,7 @@ class admin extends BaseAdmin {
 					if(!Session::data("currentDomain")) Domain::SetCurrentDomain();
 					
 					$this->data['domains'] = Domain::GetDomains();
-					$this->data['pages'] = CMS::getPagesFilter(0, Session::data("currentDomain"), CMS::MODE_FETCH);
+					$this->data['pages'] = CMS::getPagesFilter(0, Session::data("currentDomain"), CMS::MODE_FETCH, null, CMS::DISPLAY_ALL, "sort");
 					
 					load::view("admin/header", $this->data);
 					load::view("admin/list.page", $this->data);
