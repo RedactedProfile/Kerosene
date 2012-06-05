@@ -369,6 +369,9 @@ class CMS extends BaseModel {
 		}
 		
 		
+		//die(Debug::dump($allpages));
+		
+		
 		switch($render) {
 			default:
 			case self::RENDER_RAW:

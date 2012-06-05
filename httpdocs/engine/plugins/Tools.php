@@ -83,4 +83,14 @@ class Tools {
 		return Tools::FormatDate("mysql", $str);
 	}
 
+	
+	public static function GetPageRenderStats() {
+		global $db;
+		$time = microtime();
+		$time = explode(' ', $time);
+		$time = $time[1] + $time[0];
+		$finish = $time;
+		$total_time = round(($finish - $_REQUEST['start']), 4);
+		return "Page rendered in ". $total_time.' seconds, with '.$db->count_queries().' queries';
+	}
 }
