@@ -20,7 +20,7 @@ class main extends BaseController {
 		
 		$this->data['cms'] = CMS::GetDomainHomepage($this->data['domain']);
 		load::view("header", $this->data);
-		load::view("cms.basic", $this->data);
+		load::view("index", $this->data);
 		load::view("footer");
 		
 	}

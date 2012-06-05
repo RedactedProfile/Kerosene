@@ -11,6 +11,9 @@ class CMS extends BaseModel {
 	const META_KEYS				= 3;
 	const META_DESCRIPTION		= 4;
 	const META_NONE				= 5;
+	const RENDER_RAW			= 1;
+	const RENDER_ARRAY			= 2;
+	const RENDER_HTML			= 3;
 	
 	public $id					= null;
 	public $domain				= null;
@@ -347,6 +350,84 @@ class CMS extends BaseModel {
 				return new CMS($fetch->id);
 			} else return false;
 		}
+	}
+	
+	public static function GetNavigation($pages = null, $render = self::RENDER_RAW) {
+		if(!$pages) $pages = CMS::getPagesFilter(0, Session::data("currentDomain"), CMS::MODE_FETCH, null, CMS::DISPLAY_PUBLISHED, "sort", Sort::ASC);
+		$allpages = array();
+		foreach($pages as $k=>$page) {
+			$container = new stdClass();
+			$container->page = $page;
+			$container->children = null;
+			if(CMS::HasChildren($page->getID())) {
+				$container->children = CMS::getChildren($page->getID());
+				foreach($container->children as &$child) {
+					$child->setSlug( $container->page->getSlug()."/".$child->getSlug() );
+				}
+			}
+			$allpages[] = $container;
+		}
+		
+		
+		switch($render) {
+			default:
+			case self::RENDER_RAW:
+				
+				foreach($allpages as &$page) {
+					if($page->isHomePage()) $page->setSlug("/");
+				}
+				
+				break;
+			case self::RENDER_ARRAY:
+				
+				$newallpages = array();
+				foreach($allpages as $page) {
+					$container = new stdClass();
+					$container->name = $page->page->getTitle();
+					$container->url = "/".$page->page->getSlug();
+					$container->children = array();
+					if(count($page->children)>0) {
+						foreach($page->children as $child) {
+							$ccontainer = new stdClass();
+							$ccontainer->name = $child->getTitle();
+							$ccontainer->url = "/".$child->getSlug();
+							
+							$container->children[] = $ccontainer;
+						}
+					}
+					
+					$newallpages[] = $container;
+				}
+				
+				$allpages = $newallpages;
+				break;
+			case self::RENDER_HTML:
+				
+				$html = array();
+				$html[] = '<ul id="navigation-main" class="menu clearfix">';
+				foreach($allpages as $page) {
+					
+					$html[] = '<li><a href="/'.((!$page->page->isHomepage())?$page->page->getSlug():null).'">'.$page->page->getTitle().'</a>';
+					
+					if(count($page->children)>0) {
+						$html[] = '<ul id="subnavigation-main" class="menu clearfix">';
+						foreach($page->children as $child) {
+							
+							$html[] = '<li><a href="/'.$child->getSlug().'">'.$child->getTitle().'</a></li>';
+							
+						}
+						$html[] = '</ul>';
+					}
+					
+					
+				}
+				$html[] = '</ul>';
+				$allpages = implode("
+						", $html);
+				
+				break;
+		}
+		return $allpages;
 	}
 	
 }

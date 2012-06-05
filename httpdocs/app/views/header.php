@@ -7,9 +7,9 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html dir="ltr" lang="en-US"> <!--<![endif]-->
 <head>
     <meta charset="UTF-8" />
-    <title>Title of the home page</title>
-    <meta name="keywords" content="Keywords of the homepage" />
-    <meta name="description" content="Description of the homepage" />
+    <title><?=$cms->getMetaTitle();?></title>
+    <meta name="keywords" content="<?=$cms->getMetaKeys();?>" />
+    <meta name="description" content="<?=$cms->getMetaDescription();?>" />
     <meta name="robots" content="index,follow">
     <link rel="canonical" href="" />
     <link rel="shortcut icon" href="favicon.ico" />
@@ -17,10 +17,8 @@
     <link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
     <link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" />
     <!-- main css -->
-    <!--<link href="style.css" rel="stylesheet" type="text/css" />-->
 	<?inc("css", "style");?>
     <!--Make HTML 5 work in older browsers-->
-    <!--<script type='text/javascript' src='js/libs/modernizr-2.0.6.min.js'></script>-->
 	<?inc("js", "libs/modernizr-2.0.6.min");?>
 </head>
 <body>
@@ -28,15 +26,18 @@
     <div id="header-wrapper">
         <header id="header-main" class="page-width">
             <hgroup>
-                <h1 id="site-logo"><a href="" title="">Web Site Title</a></h1>
+                <h1 id="site-logo"><a href="" title=""><?=Settings::GetSetting("SITE_TITLE");?></a></h1>
             </hgroup>
             <nav>
-                <ul id="navigation-main" class="menu clearfix">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+                
+                	<?=CMS::GetNavigation($pages, CMS::RENDER_HTML);?>
+                	<!--
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                     -->
+                
             </nav>
             <!-- /#navigation-main -->          
             <nav class="social-media">
