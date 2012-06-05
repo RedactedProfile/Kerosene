@@ -14,18 +14,18 @@ $Config->DefaultController = "main";
 * Database Configuration
 **/
 $Config->db->engine = "mysql";
-$Config->db->connect = true;		// Whether to connect or not
-$Config->db->condition = ".nav";	// A part of the url to look for to 
+$Config->db->connect = false;		// Whether to connect or not
+$Config->db->condition = "";	// A part of the url to look for to 
 									// differentiate between local and live
 $Config->db->config = array(		// Local and Live Connection Information
 	"local"=>array(
-		"Host"=>"localhost",
-		"Username"=>"root",
-		"Password"=>"navpub",
-		"Database"=>"kerosene"
+		"Host"=>"",
+		"Username"=>"",
+		"Password"=>"",
+		"Database"=>""
 	),
 	"live"=>array(
-		"Host"=>"localhost",
+		"Host"=>"",
 		"Username"=>"",
 		"Password"=>"",
 		"Database"=>""
