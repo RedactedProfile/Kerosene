@@ -1,0 +1,5 @@
+Name: Kerosene Slider
+Version: 1.0
+Description: Control for a single Orbitz Slider
+Protected: 1
+AdminMethod: slideshow

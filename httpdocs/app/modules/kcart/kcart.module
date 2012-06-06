@@ -1,0 +1,5 @@
+Name: Kerosene Cart
+Version: 1.0
+Description: Shopping Cart System
+Protected: 1
+AdminMethod: cart

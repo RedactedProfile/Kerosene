@@ -1,0 +1,5 @@
+Name: CMS
+Version: 1.0
+Description: Basic CMS module
+Protected: 1
+AdminMethod: pages

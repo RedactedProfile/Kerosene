@@ -1,0 +1,5 @@
+Name: Kerosene Gallery
+Version: 1.0
+Description: Photo Gallery System
+Protected: 1
+AdminMethod: gallery

@@ -1,0 +1,5 @@
+Name: Domains
+Version: 1.0
+Description: Built in System powering the Multiple Domain System
+Protected: 1
+AdminMethod: domains

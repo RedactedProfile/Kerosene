@@ -75,6 +75,9 @@
 				<li class="pages <?=(($uri->method == "domains")?"active":null);?>">
 					<a href="/admin/domains"><span></span> Manage Domains</a>
 				</li>
+				<li class="pages" <?=(($uri->method == "modules")?"active":null);?>">
+					<a href="/admin/modules"><span></span> Modules</a>
+				</li>
 				<?}?>
 				<li class="pages <?=(($uri->method == "pages")?"active":null);?>">
 					<a href="/admin/pages"><span></span> Pages</a>

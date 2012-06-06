@@ -33,7 +33,7 @@ class Install {
 		<form method="post" action="/install/step1-proceed">
 			<h1>Site Settings</h1>
 			
-			<b>Site Domain (URL):</b><input type="text" name="siteDomain" value="http://www.google.com" /><br />
+			<b>Site Domain (URL):</b><input type="text" name="siteDomain" value="http://<?=$_SERVER['HTTP_HOST'];?>" /><br />
 			<b>Default Controller:</b><input type="text" name="defaultController" value="main" /><br />
 			<br />
 			<h1>Database Settings</h1>
@@ -475,7 +475,8 @@ $Config->Root = "http://".$_SERVER[\'HTTP_HOST\']."/";
 		//
 		$domain = "http://www.kerosene.com";
 		Domain::SetCurrentDomain( (($domain)?$domain:null), true ); // if no domain is provided, will create it. If not, will parse the current URL and use that instead
-		
+		$db->reset();
+		$db->insert("pages")->set("domain", 1)->set("slug", "home")->set("title", "Home")->set("content", "<p>Welcome Home</p>")->set("category", 0)->set("date_added", "NOW()", false)->set("date_updated", "NOW()", false)->set("display", 1)->set("sort", 1)->set("hits", 0)->set("homepage", 1)->exec();
 		
 		// TEMPORARY UNTIL MODULES SYSTEM IS DONE
 		

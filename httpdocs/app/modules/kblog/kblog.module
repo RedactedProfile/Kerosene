@@ -1,0 +1,5 @@
+Name: Kerosene Blog
+Version: 1.0
+Description: Blogging System
+Protected: 1
+AdminMethod: blog
