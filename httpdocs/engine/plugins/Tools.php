@@ -93,4 +93,12 @@ class Tools {
 		$total_time = round(($finish - $_REQUEST['start']), 4);
 		return "Page rendered in ". $total_time.' seconds, with '.$db->count_queries().' queries';
 	}
+	
+	
+	
+	
+	public static function CheckClass($supposedObject, $classname) {
+		if(is_object($supposedObject) && get_class($supposedObject) == $classname) return true;
+		else return false;
+	}
 }

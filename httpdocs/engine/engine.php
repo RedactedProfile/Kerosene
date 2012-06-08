@@ -11,6 +11,40 @@ Configuration::checkInstall();
 $Config = new Configuration();
 
 
+$Config->Bases = array(
+		$ApplicationFolder."/bases/",
+		$EngineFolder."/bases/",
+);
+$Config->Controllers = array(
+		$ApplicationFolder."/controllers/",
+		$EngineFolder."/controllers/",
+);
+$Config->Models = array(
+		$ApplicationFolder."/models/",
+		$EngineFolder."/models/",
+);
+$Config->Assistants = array(
+		$ApplicationFolder."/assistants/",
+		$EngineFolder."/assistants/"
+);
+$Config->Plugins = array(
+		$ApplicationFolder."/plugins/",
+		$EngineFolder."/plugins/"
+);
+$Config->Views = array(
+		$ApplicationFolder."/views/",
+		$EngineFolder."/views/"
+);
+
+
+/**
+ * Nevermind These
+ **/
+$Config->DocRoot = $_SERVER['DOCUMENT_ROOT']."/";
+$Config->Root = "http://".$_SERVER['HTTP_HOST']."/";
+
+
+// REQUIRED FILES MANIFEST
 $includes = array(
 		$EngineFolder."/plugins/Consts",
 		$EngineFolder."/models/Settings",
@@ -121,6 +155,7 @@ if($uri->isempty()) {
 		if(class_exists($uri->controller))
 			$controller = new $uri->controller;
 		else {
+			// reroute the controller to a basic CMS page
 			load::controller("cmsbasic");
 			$controller = new cmsBasic();
 		}
@@ -128,7 +163,12 @@ if($uri->isempty()) {
 	}
 	if($uri->method) {
 		$uri->method = str_replace("-", "_", $uri->method);
-		if(method_exists($controller, $uri->method)) {
+		if(get_class($controller) == "cmsBasic") {
+			// because cmsBasic has NO built in methods, we must fake it for nested content
+			array_unshift($uri->arguments, $uri->method);
+			$controller->{$uri->method}( (( count($uri->arguments)>0 )? $uri->attributes() : null ) );
+
+		} else if(method_exists($controller, $uri->method)) {
 			$controller->{$uri->method}( (( count($uri->arguments)>0 )? $uri->attributes() : null ) );
 		} else {
 			array_unshift($uri->arguments, $uri->method);

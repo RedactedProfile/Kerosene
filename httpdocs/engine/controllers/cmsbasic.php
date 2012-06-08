@@ -18,11 +18,27 @@ class cmsBasic extends BaseController {
 	
 	public function index() {
 		
+		$this->uri->controller = str_replace("_", "-", $this->uri->controller);
 		$this->data['cms'] = new CMS($this->uri->controller);
+		$this->data['root'] = $this->uri->controller;
 		load::view("header", $this->data);
 		load::view("cms.basic", $this->data);
 		load::view("footer");
 		
 	}
+
+
+	public function __call($method, $args) {
+
+		//die(var_dump($this->uri));
+		$this->uri->method = str_replace("_", "-", $this->uri->method);
+		$this->data['cms'] = new CMS($this->uri->method);
+		$this->data['root'] = $this->uri->controller;
+		load::view("header", $this->data);
+		load::view("cms.basic", $this->data);
+		load::view("footer");
+
+	}
 	
 }
+

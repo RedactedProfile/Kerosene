@@ -8,6 +8,7 @@ class BaseAdmin extends BasePage {
 			'title'=> array("Applewood Administration System"),
 			'pages'=> array(	// This is just for page titles
 				''=>"Home",
+				'cart'=>"Cart System",
 				'domains'=>"Manage Domains",
 				'secure'=>"Please Log In",
 				'pages'=>"Page Management",

@@ -82,6 +82,10 @@
 				<li class="cart" <?=(($uri->method == "cart")?"active":null);?>">
 					<a href="/admin/cart"><span></span> Cart System</a>
 				</li>
+				<li class="menus <?=(($uri->method == "pages")?"active":null);?>">
+					<a href="/admin/menus"><span></span> Menus</a>
+				</li>
+				
 				<li class="pages <?=(($uri->method == "pages")?"active":null);?>">
 					<a href="/admin/pages"><span></span> Pages</a>
 				</li>
