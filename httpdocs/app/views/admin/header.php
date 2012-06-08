@@ -33,7 +33,7 @@
 		<div id="header">
 			<a href="http://www.navigatormm.com" title="Navigator Multimedia Inc" target="_blank" class="logo">Navigator Multimedia Inc</a>
 			<div class="tool-bar">
-				<a href="/admin/" class="site-title">Applewood Site Management</a>
+				<a href="/" class="site-title"><?=Settings::getSetting("SITE_TITLE");?> Site Management</a>
 				<ul>
 					<li class="settings"><a href="/admin/settings/site" title="Site Settings">Settings</a></li>
 					<li class="stats"><a href="/admin/" title="Site Stats">Stats</a></li>

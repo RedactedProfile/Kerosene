@@ -1081,6 +1081,11 @@ class admin extends BaseAdmin {
 		load::view("admin/footer");
 	}
 	
+	
+	public function menus() {
+		
+	}
+	
 	public function cart() {
 		
 		switch($this->uri->arguments[0]) {

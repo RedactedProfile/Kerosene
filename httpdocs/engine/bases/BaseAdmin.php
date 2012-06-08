@@ -17,7 +17,8 @@ class BaseAdmin extends BasePage {
 				'slideshow'=>"Slideshow",
 				'map'=>"Map Editor",
 				'settings'=>"Site Settings",
-				'ajax'=>"Ajax"
+				'ajax'=>"Ajax",
+				'menus'=>"Medu Editor"
 			)
 		);
 		$this->data['uri'] = $this->uri;
