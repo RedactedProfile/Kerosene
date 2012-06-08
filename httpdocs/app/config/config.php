@@ -33,33 +33,6 @@ $Config->db->config = array(		// Local and Live Connection Information
 );
 
 
-/**
- * The arrays listed below are the main directory search configurations. 
- * You are free to add more, the order matters (top obviusly higher priority) 
- **/
-$Config->Bases = array(
-		$ApplicationFolder."/bases/"
-);
-$Config->Controllers = array(
-		$ApplicationFolder."/controllers/"
-);
-$Config->Models = array(
-		$ApplicationFolder."/models/",
-		$EngineFolder."/models/",
-);
-$Config->Assistants = array(
-		$ApplicationFolder."/assistants/",
-		$EngineFolder."/assistants/"
-);
-$Config->Plugins = array(
-		$ApplicationFolder."/plugins/",
-		$EngineFolder."/plugins/"
-);
-$Config->Views = array(
-		$ApplicationFolder."/views/"
-);
-
-
 // These pages (based on URI) will be forced to HTTPS mode, all other pages will be forced HTTP
 $Config->SecurePages = array(
 		

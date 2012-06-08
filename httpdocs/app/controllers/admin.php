@@ -1083,7 +1083,11 @@ class admin extends BaseAdmin {
 	
 	
 	public function menus() {
-		
+		if(!$this->uri->arguments[0]) {
+			die(redirect("/admin/menus/list"));
+		}
+		load::view("admin/header", $this->data);
+		load::view("admin/footer", $this->data);
 	}
 	
 	public function cart() {
