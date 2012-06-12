@@ -22,3 +22,8 @@ class Sort {
 	const ASC			= 1;
 	const DESC			= 2;
 }
+
+class Target {
+	const _SAME			= 1;
+	const _NEW			= 2;
+}

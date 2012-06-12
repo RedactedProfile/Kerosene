@@ -65,6 +65,7 @@ $includes = array(
 		$EngineFolder."/assistants/html",
 		$EngineFolder."/assistants/input",
 		$EngineFolder."/assistants/system",
+		$EngineFolder."/models/Menu",
 		$EngineFolder."/models/CMS",
 		$EngineFolder."/models/Domain",
 		$EngineFolder."/plugins/debug",

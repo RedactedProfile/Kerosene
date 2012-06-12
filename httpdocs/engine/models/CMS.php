@@ -433,5 +433,14 @@ class CMS extends BaseModel {
 		return $allpages;
 	}
 	
+	
+	public static function getNextID() {
+		global $db;
+		$fetch = $db->select("(id + 1) as id")->from("pages")->orderby("id", "DESC")->get()->result();
+		if($db->numrows()>0) {
+			return $fetch->id;
+		}
+	}
+	
 }
 

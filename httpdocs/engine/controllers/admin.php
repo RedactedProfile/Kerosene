@@ -102,7 +102,8 @@ class admin extends BaseAdmin {
 				}
 
 				$page->setTitle( post("title") );
-				if($this->uri->arguments[1] == "new") $page->setSlug( Tools::Slug($page->getTitle()) ); // do NOT overwrite the slug field of any of the main categories (all category '0')
+				//if($this->uri->arguments[1] == "new") $page->setSlug( Tools::Slug($page->getTitle()) ); // do NOT overwrite the slug field of any of the main categories (all category '0')
+				if($this->uri->arguments[1] == "new") $page->setSlug( "page/".(($page->getID())?$page->getID():CMS::getNextID()) ); // do NOT overwrite the slug field of any of the main categories (all category '0')
 				$page->setContent($_POST["content"] );
 				$page->setDomain(Session::data("currentDomain"));
 				$page->setMetaTitle( post("meta_title") );
