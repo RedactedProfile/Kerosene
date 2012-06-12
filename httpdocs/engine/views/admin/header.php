@@ -29,6 +29,11 @@
 		<link rel="icon" href="/images/system/favicon.ico" type="image/vnd.microsoft.icon" /> 
 	</head>
 	<body>
+	<!-- 
+	<?$art = new AsciiGen();
+	echo $art->displayArt();?>
+	-->
+	
 	<div id="page-wrapper">
 		<div id="header">
 			<a href="http://www.navigatormm.com" title="Navigator Multimedia Inc" target="_blank" class="logo">Navigator Multimedia Inc</a>

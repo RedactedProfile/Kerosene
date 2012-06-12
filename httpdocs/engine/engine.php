@@ -72,7 +72,8 @@ $includes = array(
 		$EngineFolder."/plugins/session",
 		$EngineFolder."/plugins/Tools",
 		$EngineFolder."/plugins/Message",
-		$EngineFolder."/models/Account"
+		$EngineFolder."/models/Account",
+		$EngineFolder."/plugins/AsciiGen"
 );
 // Loads the includes
 foreach($includes as $inc) {

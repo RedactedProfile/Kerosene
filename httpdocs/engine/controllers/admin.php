@@ -1087,8 +1087,83 @@ class admin extends BaseAdmin {
 		if(!$this->uri->arguments[0]) {
 			die(redirect("/admin/menus/list"));
 		}
-		load::view("admin/header", $this->data);
-		load::view("admin/footer", $this->data);
+		switch($this->uri->arguments[0]) {
+			case "list":
+				load::view("admin/header", $this->data);
+				$this->data['domains'] = Domain::GetDomains(Filter::ALL);
+				$this->data['menus'] = Menu::getMenus( Session::data("currentDomain") );
+				load::view("admin/list.menus", $this->data);
+				load::view("admin/footer");
+				break;
+				
+			case "links":
+				
+				if(!isset($this->uri->arguments[1])) redirect("/admin/menus");
+				switch($this->uri->arguments[1]) {
+					case "list":
+						if(!isset($this->uri->arguments[2]) || trim($this->uri->arguments[2]) == "") die(redirect("/admin/menus"));
+						load::view("admin/header", $this->data);
+						$this->data['menu'] = new Menu($this->uri->arguments[2]);
+						$this->data['links'] = Menu::GetMenuItems( $this->data['menu'] );
+						load::view("admin/list.menus.links", $this->data);
+						load::view("admin/footer");
+						break;
+						
+					case "save":
+						
+						
+						if(!isset($this->uri->arguments[2])) redirect("/admin/menus");
+						
+						$menu = new Menu(post("menu"));
+						
+						if($this->uri->arguments[2] == "new") {
+							$link = new MenuItem();
+							$link->setMenu( $menu );
+						} else $link = new MenuItem($this->uri->arguments[2]);
+						
+						$link->setLabel( post("label") )
+							 ->setClasses( post("classes") )
+							 ->setTarget( post("target") )
+							 ->setURI( post("url") )
+						;
+						
+						
+						if($link->save()) Session::flash("sysmsg", (string)new Success("Link <em>".post("label")."</em> saved successfully"));
+						else Session::flash("sysmsg", (string)new Error("Link could not be saved at this time"));
+						
+						redirect("/admin/menus/links/list/".$menu->getID());
+						
+						
+						break;
+				}
+				
+				break;
+				
+			case "save":
+				
+				if(!isset($this->uri->arguments[1])) redirect("/admin/menus");
+				
+				if($this->uri->arguments[1] == "new") {
+					$menu = new Menu();
+					$menu->setDomain( Session::data("currentDomain") );
+					
+					
+				} else $menu = new Menu($this->uri->arguments[1]);
+				
+				
+				$menu->setName( post("name") );
+				$menu->setIdentifier( Tools::Slug( post("name") ) );
+				
+				if($menu->save()) Session::flash("sysmsg", (string)new Success("Menu <em>".post("name")."</em> saved successfully"));
+				else Session::flash("sysmsg", (string)new Error("Menu could not be saved at this time"));
+				
+				redirect("/admin/menus");
+				
+				
+				break;
+		}
+		
+		
 	}
 	
 	public function cart() {
