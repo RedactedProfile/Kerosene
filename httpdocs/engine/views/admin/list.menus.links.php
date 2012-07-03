@@ -1,4 +1,10 @@
 <?inc("js", "jquery.ui.nestedSortable");?>
+<style>
+
+	.placeholder {
+			background-color: #cfcfcf;
+		}
+</style>
 <script>
 	function deleteMenu(parent, slug) {
 		if(confirm("Are you sure you wish to delete this page? This is irreversable.")) {
@@ -39,8 +45,19 @@
 			}
 		);
 		*/
-		$("#menu-navigation").nestedSortable({
-			maxLevels: 2
+		$("ol.sortable").nestedSortable({
+			disableNesting: 'no-nest',
+			forcePlaceholderSize: true,
+			handle: 'div',
+			helper:	'clone',
+			items: 'li',
+			maxLevels: 2,
+			opacity: .6,
+			placeholder: 'placeholder',
+			revert: 250,
+			tabSize: 25,
+			tolerance: 'pointer',
+			toleranceElement: '> div'
 		});
 
 		
@@ -57,34 +74,17 @@
 <?=Session::flash("sysmsg");?>
 <?=(string)new Tip("You can reorder menus and submenus by dragging them around. Changes are saved immediately");?>
 <nav>
-	<ul id="menu-navigation">
+	<ol class="sortable">
 		<?foreach($links as $link){?>
 			<li id="<?=$link->getID();?>">
-				<?if(!$link->isHomepage()){?><input type="button" value="Make Homepage" onclick="window.location= '/admin/pages/make-homepage/<?=$link->getID();?>'" /><?}?>
 				<div class="inner-list">
-					
 					<div class="main-link">
 						<h3><a class="launcher" href="#link_<?=$link->getID();?>"><?=$link->getLabel();?></a></h3> 
 					</div>
-					
-					<?if(MenuItem::HasChildren( $link )){?>
-					<ul class="sub-navigation-main">
-					<?foreach(MenuItem::GetChildren( $link ) as $child){?>
-						<li id="<?=$child->getID();?>">
-							<a class="launcher" href="#link_<?=$child->getID();?>" class="sub-page"><?=$child->getLabel();?></a>
-							<div class="on-hover">
-								<a href="/admin/pages/edit/<?=$link->getID();?>/<?=$child->getSlug();?>" class="edit">Edit</a>
-								<span class="delete" onclick="deleteMenu('index', '<?=$child->getID();?>');">Delete</span>
-								<a href="http://www.applewood.nav/main/<?=$child->getSlug();?>" class="iframe view-btn">View</a>
-							</div>
-						<?}?>
-					</ul>
-					<?}?>
-					
 				</div>								
 			</li>
 		<?}?>
-	</ul>
+	</ol>
 </nav>
 
 <div style="display:none;">
